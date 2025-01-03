@@ -15,7 +15,7 @@
     "netlifyInit": "netlify init",
     "netlifyUnlink": "netlify unlink",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --cname abrahamnaiborhu.me"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",

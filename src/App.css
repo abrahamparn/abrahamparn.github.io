@@ -1,0 +1,4 @@
+.navContent,
+.navBoxContainer {
+  transform: translateX(-100%);
+}

@@ -1,29 +1,20 @@
 module.exports = {
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}',
-    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
       sm: "480px",
       md: "768px",
       lg: "976px",
       xl: "1440px",
-      xxl: "2560px"
-
+      xxl: "2560px",
     },
     colors: {
-      black_lighter: '#181823',
-      light_gray: '#8491A0',
-      dark_gray: '#5B6876',
-      yellow_custom: '#FF8A00',
-      blue_custom:'#609BFF',
-      green_custom: '#3CC74E',
-      pink_custom: '#E95D90',
-      peach_custom: '#FFF3E4',
-      violet_custom: '#FBE4FF',
-
+      black_main: "#222831",
+      black_secondary: "#31363F",
+      blue_secondary: "#76ABAE",
+      white_tertiary: "#EEEEEE",
     },
+
     borderRadius: {
       none: "0px",
       sm: "0.125rem",
@@ -37,22 +28,16 @@ module.exports = {
     },
     boxShadow: {
       sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-      DEFAULT:
-        "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
-      md:
-        "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-      lg:
-        "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-      xl:
-        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      DEFAULT: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+      md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
       inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
       none: "none",
     },
     fontFamily: {
-      sen:[
-        "Sen"
-      ]
+      sen: ["Sen"],
     },
     maxHeight: (theme) => ({
       ...theme("spacing"),
@@ -92,10 +77,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [
-    require('flowbite/plugin'),
-    require('tailwind-scrollbar-hide')
-
-]
-
-}
+  plugins: [require("flowbite/plugin"), require("tailwind-scrollbar-hide")],
+};

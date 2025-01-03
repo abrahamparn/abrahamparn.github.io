@@ -27,7 +27,7 @@ export default function Footer() {
       </div>
 
       <div className="text-dark_gray text-sm md:text-base lg:text-lg xl:text-xl">
-        <p>Copright 2023 - Abraham Naiborhu - A Perosnal Website</p>
+        <p>Copright 2025 - Abraham Naiborhu - A Personal Website</p>
       </div>
     </section>
   );

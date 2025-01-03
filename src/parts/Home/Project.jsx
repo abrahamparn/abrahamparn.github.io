@@ -59,7 +59,7 @@ export default function Project() {
             descriptionProject={
               "Cloning apple website to showcase that I am able to utilize gsap animation. Made using react"
             }
-            linkUrl={"https://www.abrahamnaiborhu.com"}
+            linkUrl={"/"}
           />
           <ProjectCard
             pictureUrl={awardWinningClone}
@@ -67,7 +67,7 @@ export default function Project() {
             descriptionProject={
               "a clone to gaming website which is heavily animated. Made using react"
             }
-            linkUrl={"https://www.abrahamnaiborhu.com"}
+            linkUrl={"https://abrahamnaiborhu.me/awards"}
           />
           <ProjectCard
             pictureUrl={kedaiLantaiKayu}
