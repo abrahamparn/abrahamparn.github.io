@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import NavItem from "./NavItem";
 export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHover }) {
   return (
-    <header className="absolute w-full z-10" ref={headerRef}>
-      <nav className="w-full flex flex-row justify-between p-5">
+    <header className="fixed w-full z-10" ref={headerRef}>
+      <nav className="w-full flex flex-row justify-between px-10 py-5 text-white_tertiary">
         <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl">Abraham_pn</p>
         <button className="text-3xl" onClick={handleMenuOnClick}>
           ☰
         </button>
       </nav>
 
-      <div className="navBoxContainer h-[100dvh] w-screen z-20 absolute top-0 left-0 bg-white text-white_tertiary flex flex-col justify-between">
+      <div className="navBoxContainer h-[100dvh] w-screen z-20 absolute top-0 left-0 bg-transparent text-white_tertiary flex flex-col justify-between">
         <div className="navBox w-full bg-black_main h-[5%]"></div>
         <div className="navBox w-full bg-black_main h-[5%]"></div>
         <div className="navBox w-full bg-black_main h-[5%]"></div>
@@ -33,7 +33,7 @@ export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHove
         <div className="navBox w-full bg-black_main h-[5%]"></div>
       </div>
       <div className="navContent h-[100dvh] w-screen z-30 absolute top-0 left-0 bg-transparent text-white_tertiary p-5 flex flex-col gap-3">
-        <div className="w-full flex flex-row justify-between text-lg md:text-xl lg:text-2xl xl:text-3xl">
+        <div className="w-full flex flex-row justify-between text-lg md:text-xl lg:text-2xl xl:text-3xl px-5">
           <p className="navContentText">Abraham_pn</p>
           <button className="text-3xl navContentText" onClick={handleMenuOnClick}>
             X

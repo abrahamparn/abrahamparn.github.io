@@ -12,16 +12,18 @@ import Footer from "./components/Footer";
 import Home from "./views/Home";
 import { useGSAP } from "@gsap/react";
 import NavItem from "./components/NavItem";
+import Hero from "./parts/Home/Hero";
 
 function App() {
+  //MAIN CONTEXT
+  const { contextSafe } = useGSAP();
+
+  //NAV ANIMATION
   const [navActive, setNavActive] = useState(false);
+  const headerRef = useRef(null);
   const handleMenuOnClick = () => {
     setNavActive(!navActive);
   };
-
-  //for nav animation
-  const headerRef = useRef(null);
-
   useGSAP(
     () => {
       let timeline = gsap.timeline({ defaults: { ease: "power1.inOut" } });
@@ -93,9 +95,6 @@ function App() {
     },
     { scope: headerRef, dependencies: [navActive] }
   );
-
-  const { contextSafe } = useGSAP();
-
   const handleNavItemHover = contextSafe((e) => {
     const item = e.currentTarget;
 
@@ -118,14 +117,44 @@ function App() {
     timeline.restart();
   });
 
+  const handleButtonHover = contextSafe((e) => {
+    const item = e.currentTarget;
+
+    const buttonItemButton = item.querySelectorAll(".buttonItemBottom span");
+    const buttonItemUpper = item.querySelectorAll(".buttonItemUpper span");
+
+    let timeline = gsap.timeline();
+    timeline.fromTo(
+      buttonItemButton,
+      { y: 0, opacity: 1 },
+      { y: "40%", opacity: 0, duration: 0.3, stagger: 0.2 }
+    );
+    timeline.fromTo(
+      buttonItemUpper,
+      { y: "-80%", opacity: 0 },
+      { y: "0", opacity: 1, duration: 0.3, stagger: 0.2 },
+      "<"
+    );
+    timeline.restart();
+  });
+
+  //HERO ANIMATION
+
   return (
-    <main className="bg-white_tertiary relative">
+    <main className="relative">
       <Navbar
         headerRef={headerRef}
         handleMenuOnClick={handleMenuOnClick}
         handleNavItemHover={handleNavItemHover}
       />
-      <section id="hero"></section>
+      <Hero handleButtonHover={handleButtonHover} />
+      <section id="Project" className="h-[100dvh] bg-white">
+        <div className="flex h-full flex-col justify-center items-center text-black_main">
+          <div>HAI</div>
+          <div>HAI</div>
+          <div>HAI</div>
+        </div>
+      </section>
     </main>
   );
 }
