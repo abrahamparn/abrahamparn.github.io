@@ -13,6 +13,7 @@ import Home from "./views/Home";
 import { useGSAP } from "@gsap/react";
 import NavItem from "./components/NavItem";
 import Hero from "./parts/Home/Hero";
+import WorkExperience from "./parts/Home/WorkExperience";
 
 function App() {
   //MAIN CONTEXT
@@ -148,13 +149,9 @@ function App() {
         handleNavItemHover={handleNavItemHover}
       />
       <Hero handleButtonHover={handleButtonHover} />
-      <section id="Project" className="h-[100dvh] bg-white">
-        <div className="flex h-full flex-col justify-center items-center text-black_main">
-          <div>HAI</div>
-          <div>HAI</div>
-          <div>HAI</div>
-        </div>
-      </section>
+      <WorkExperience />
+
+      <section id="project" className="h-[100dvh] bg-black text-white_tertiary"></section>
     </main>
   );
 }
