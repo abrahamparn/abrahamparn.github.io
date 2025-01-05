@@ -42,12 +42,43 @@ export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHove
         <div className="flex flex-col h-full ps-10 justify-between md:flex-row md:justify-around">
           <div className="flex flex-col justify-evenly text-3xl md:text-4xl lg:text-6xl xl:text-8xl gap-4 md:gap-0 font-bold">
             {/* Main Navigation Items */}
-            <NavItem text="HOME" href="#home" onHover={handleNavItemHover} />
-            <NavItem text="ABOUT" href="#about" onHover={handleNavItemHover} />
-            <NavItem text="SKILLS" href="#skills" onHover={handleNavItemHover} />
-            <NavItem text="EXPERIENCE" href="#experience" onHover={handleNavItemHover} />
-            <NavItem text="PROJECT" href="#project" onHover={handleNavItemHover} />
-            <NavItem text="CONTACT" href="#contact" onHover={handleNavItemHover} />
+            <NavItem
+              text="HOME"
+              href="#hero"
+              onHover={handleNavItemHover}
+              handleMenuOnClick={handleMenuOnClick}
+            />
+            {/* <NavItem
+              text="ABOUT"
+              href="#about"
+              onHover={handleNavItemHover}
+              handleMenuOnClick={handleMenuOnClick}
+            /> */}
+
+            <NavItem
+              text="EXPERIENCE"
+              href="#workExperience"
+              onHover={handleNavItemHover}
+              handleMenuOnClick={handleMenuOnClick}
+            />
+            <NavItem
+              text="SKILLS"
+              href="#skills"
+              onHover={handleNavItemHover}
+              handleMenuOnClick={handleMenuOnClick}
+            />
+            <NavItem
+              text="PROJECT"
+              href="#project"
+              onHover={handleNavItemHover}
+              handleMenuOnClick={handleMenuOnClick}
+            />
+            <NavItem
+              text="CONTACT"
+              href="#contact"
+              onHover={handleNavItemHover}
+              handleMenuOnClick={handleMenuOnClick}
+            />
           </div>
           <div className="navContentTextBorder w-[1px] h-full bg-white_tertiary hidden md:flex"></div>
           <div className="md:flex md:justify-center md:text-xl lg:text-3xl xl:text-5xl">

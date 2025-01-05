@@ -60,7 +60,6 @@ export default function WorkExperience() {
             scrollTrigger: {
               trigger: filler,
               start: "top 50%",
-              markers: true,
               toggleActions: "play none none reverse",
             },
             duration: 0.1,
@@ -73,13 +72,14 @@ export default function WorkExperience() {
           scrollTrigger: {
             trigger: item,
             start: "top 50%",
-            markers: true,
             toggleActions: "play none none reverse",
           },
           background: colors[i],
           duration: 1,
         });
       });
+
+      //This is for 'experience' animation
       let timeline = gsap.timeline();
       timeline.to(".experienceBottomText", {
         y: "100%",
