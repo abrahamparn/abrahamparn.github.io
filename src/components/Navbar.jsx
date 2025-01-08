@@ -67,12 +67,13 @@ export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHove
               onHover={handleNavItemHover}
               handleMenuOnClick={handleMenuOnClick}
             />
+            {/*
             <NavItem
               text="PROJECT"
               href="#project"
               onHover={handleNavItemHover}
               handleMenuOnClick={handleMenuOnClick}
-            />
+            /> */}
             <NavItem
               text="CONTACT"
               href="#contact"

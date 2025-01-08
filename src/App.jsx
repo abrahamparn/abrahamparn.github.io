@@ -14,6 +14,8 @@ import { useGSAP } from "@gsap/react";
 import NavItem from "./components/NavItem";
 import Hero from "./parts/Home/Hero";
 import WorkExperience from "./parts/Home/WorkExperience";
+import Contact from "./components/Contact";
+import Skillset from "./parts/Home/Skillset";
 
 function App() {
   //MAIN CONTEXT
@@ -148,10 +150,11 @@ function App() {
         handleMenuOnClick={handleMenuOnClick}
         handleNavItemHover={handleNavItemHover}
       />
-      <Hero handleButtonHover={handleButtonHover} />
-      <WorkExperience />
 
-      <section id="project" className="h-[100dvh] bg-black text-white_tertiary"></section>
+      <Hero handleButtonHover={handleButtonHover} />
+      <Skillset />
+      <WorkExperience />
+      <Contact />
     </main>
   );
 }

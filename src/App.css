@@ -2,3 +2,6 @@
 .navBoxContainer {
   transform: translateX(-100%);
 }
+.target {
+  font-kerning: none;
+}

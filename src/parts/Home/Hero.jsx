@@ -12,19 +12,7 @@ export default function Hero({ handleButtonHover }) {
   useGSAP(
     () => {
       let timeline = gsap.timeline();
-      // timeline.fromTo(
-      //   ".heroBox",
-      //   { y: "-100%" },
-      //   {
-      //     y: "0%",
-      //     duration: 1,
-      //     ease: "power2.out",
-      //     stagger: {
-      //       amount: 1,
-      //       //  from: "random",
-      //     },
-      //   }
-      // );
+
       timeline
         .fromTo(
           heroRef.current.querySelectorAll(".heroHeaderTitle"),
@@ -87,7 +75,7 @@ export default function Hero({ handleButtonHover }) {
                 className="border-2	border-white_tertiary p-2 text-xl font-bold heroHeaderTextDetail opacity-0 relative"
                 onMouseEnter={handleButtonHover}
               >
-                <a className="buttonItemBottom ">
+                <a className="buttonItemBottom" href="#contact">
                   <span className="inline-block">C</span>
                   <span className="inline-block">O</span>
                   <span className="inline-block">N</span>
@@ -99,7 +87,7 @@ export default function Hero({ handleButtonHover }) {
                   <span className="inline-block">M</span>
                   <span className="inline-block">E</span>
                 </a>
-                <a className="buttonItemUpper absolute left-0 right-0 ">
+                <a className="buttonItemUpper absolute left-0 right-0 " href="#contact">
                   <span className="inline-block ">C</span>
                   <span className="inline-block ">O</span>
                   <span className="inline-block ">N</span>
