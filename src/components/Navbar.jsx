@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import NavItem from "./NavItem";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
+import instagram from "../assets/navIcons/icons8-instagram-250.svg";
+import github from "../assets/navIcons/icons8-github-250.svg";
+import linkedin from "../assets/navIcons/icons8-linkedin-250.svg";
+import whatsapp from "../assets/navIcons/icons8-whatsapp-250.svg";
 
 export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHover, navActive }) {
   const { y: currentScrollY } = useWindowScroll();
@@ -114,34 +118,31 @@ export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHove
             />
           </div>
           <div className="navContentTextBorder w-[1px] h-full bg-white_tertiary hidden md:flex"></div>
-          <div className="md:flex md:justify-center md:text-xl lg:text-3xl xl:text-5xl">
+          <div className="md:flex md:justify-center md:text-xl md:h-full lg:text-3xl xl:text-5xl h-20 ">
             <div className="navContentTextBorder opacity-0 w-full border-t bg-white self-end md:hidden"></div>
 
-            <div className="flex flex-row justify-evenly md:flex-col md:justify-center gap-2 lg:gap-10 font-bold">
-              <div className="flex justify-center items-center">
-                <div className="navContentText">ABRAHAM_PN</div>
-              </div>
-              <div className="flex flex-col gap-2 lg:gap-10">
-                <NavItem
-                  text="INSTAGRAM"
-                  href="https://www.instagram.com/abraham_pn"
-                  onHover={handleNavItemHover}
-                />
-                <NavItem
-                  text="GITHUB"
-                  href="https://github.com/abrahamparn/"
-                  onHover={handleNavItemHover}
-                />
-                <NavItem
-                  text="LINKEDIN"
-                  href="https://linkedin.com/in/abrahamnaiborhu"
-                  onHover={handleNavItemHover}
-                />
-                <NavItem
-                  text="WHATSAPP"
-                  href="https://wa.me/+6281388302150"
-                  onHover={handleNavItemHover}
-                />
+            <div className="flex flex-row justify-evenly md:flex-col md:justify-center gap-2 lg:gap-10 font-bold mt-5">
+              <div className="flex flex-row md:flex-col gap-5 md:gap-10 lg:gap-14 xxl:gap-28">
+                <div className="navContentText " onClick={handleMenuOnClick}>
+                  <a href={"https://instagram.com/abraham_pn"} rel="noopener noreferrer">
+                    <img src={instagram} className="w-10 md:w-16 lg:w-[4.5rem] xl:w-24 xxl:w-44 " />
+                  </a>
+                </div>
+                <div className="navContentText " onClick={handleMenuOnClick}>
+                  <a href={"https://github.com/abrahamparn/"} rel="noopener noreferrer">
+                    <img src={github} className="w-10 md:w-16 lg:w-[4.5rem] xl:w-24 xxl:w-44" />
+                  </a>
+                </div>
+                <div className="navContentText " onClick={handleMenuOnClick}>
+                  <a href={"https://linkedin.com/in/abrahamnaiborhu"} rel="noopener noreferrer">
+                    <img src={linkedin} className="w-10 md:w-16 lg:w-[4.5rem] xl:w-24 xxl:w-44" />
+                  </a>
+                </div>
+                <div className="navContentText " onClick={handleMenuOnClick}>
+                  <a href={"https://wa.me/+6281388302150"} rel="noopener noreferrer">
+                    <img src={whatsapp} className="w-10 md:w-16 lg:w-[4.5rem] xl:w-24 xxl:w-44" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
