@@ -1,166 +1,190 @@
-import React from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
-import { useLayoutEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import ProjectCard from "../../components/ProjectCard";
+
 import awardWinningClone from "../../assets/projects/awardWinningClone.png";
 import duta8mengemudi from "../../assets/projects/duta8mengemudi.png";
 import kedaiLantaiKayu from "../../assets/projects/kedaiLantaiKayu.png";
 import mkstorejastip from "../../assets/projects/mkstorejastip.png";
 import appleClone from "../../assets/projects/appleClone.png";
 import WMDEVELOPER from "../../assets/projects/WMDEVELOPER.png";
+import sitonggiElektrikJaya from "../../assets/projects/sitonggiElektrikJaya.png";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Project() {
-  let projectRef = useRef(null);
-  let projectSectionRef = useRef(null);
+  const projectSectionRef = useRef(null);
 
-  useGSAP(() => {
-    gsap.timeline({
-      scrollTrigger: {
-        pin: projectRef.current,
-        trigger: projectSectionRef.current,
-        start: "top top",
-        end: "bottom bottom",
-      },
-    });
-  }, []);
+  // This ratio helps with parallax calculations:
+  let getRatio = (element) => window.innerHeight / (window.innerHeight + element.offsetHeight);
+
+  useGSAP(
+    () => {
+      gsap.utils.toArray(".parallaxProject").forEach((section, i) => {
+        const bgElement = section.querySelector(".parallax-bg");
+        if (!bgElement) return;
+
+        gsap.fromTo(
+          bgElement,
+          {
+            backgroundPosition: () => "50% 0px",
+          },
+          {
+            backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: () => "top bottom",
+              end: "bottom top",
+              scrub: true,
+              invalidateOnRefresh: true,
+              // markers: true,
+            },
+          }
+        );
+      });
+    },
+    { scope: projectSectionRef }
+  );
 
   return (
-    <div id="projects">
-      <section
-        className="text-white p-5 lg:p-20 py-12 lg:py-20 grid grid-cols-1 gap-8 lg:gap-14 md:grid-cols-2 md:hidden"
-        ref={projectSectionRef}
-      >
-        <div className="flex flex-col gap-5  ">
-          <div className="sticky" ref={projectRef}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl xxl:text-8xl font-sen font-bold">
-              MY PROJECTS
-            </h2>
-            <p className="text-base md:text-xl/9 lg:text-2xl/10 xl:text-3xl/[50px] xxl:text-6xl/[80px] text-light_gray ">
-              Projects that I'have done so far.
-            </p>
+    <section
+      id="project"
+      className="h-full min-h-[100dvh] px-10 bg-black text-white"
+      ref={projectSectionRef}
+    >
+      {/* Intro Text */}
+      <div className="w-full  pt-12 xxl:pt-20 flex flex-col gap-3 xxl:gap-10">
+        <h2 className="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl xxl:text-9xl">
+          PROJECTS
+        </h2>
+        <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-6xl">
+          Hey! These are the web projects that I have made
+        </p>
+      </div>
+
+      {/* Grid of parallax sections */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-10 pt-16">
+        <div className="parallaxProject relative flex justify-center items-center">
+          <div
+            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            style={{ backgroundImage: `url(${awardWinningClone})` }}
+          ></div>
+          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+              Award Copy
+            </h3>
+            <div className="flex justify-center items-center">
+              <a
+                href="https://abrahamnaiborhu.me/awards"
+                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+              >
+                CHECK ME
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="columns-1 space-y-4 md:space-y-8">
-          <ProjectCard
-            pictureUrl={WMDEVELOPER}
-            titleProject={"wmdeveloper"}
-            descriptionProject={
-              "A modern, simple, and seamless design for wmdeveloper. Made using react"
-            }
-            linkUrl={"https://www.wmdeveloper.com"}
-          />
-          <ProjectCard
-            pictureUrl={appleClone}
-            titleProject={"Apple Clone"}
-            descriptionProject={
-              "Cloning apple website to showcase that I am able to utilize gsap animation. Made using react"
-            }
-            linkUrl={"/"}
-          />
-          <ProjectCard
-            pictureUrl={awardWinningClone}
-            titleProject={"awad winning clone"}
-            descriptionProject={
-              "a clone to gaming website which is heavily animated. Made using react"
-            }
-            linkUrl={"https://abrahamnaiborhu.me/awards"}
-          />
-          <ProjectCard
-            pictureUrl={kedaiLantaiKayu}
-            titleProject={"kedai lantai kayu"}
-            descriptionProject={
-              "One of our client that sells interior wood flooring and vinly. Made using wordpress"
-            }
-            linkUrl={"https://www.kedailantaikayu.com"}
-          />
-          <ProjectCard
-            pictureUrl={mkstorejastip}
-            titleProject={"MkStore Jastip"}
-            descriptionProject={
-              "One of our client website that offers goods delivery service. Made using wordpress"
-            }
-            linkUrl={"https://www.mkstorejastip.com"}
-          />
-          <ProjectCard
-            pictureUrl={duta8mengemudi}
-            titleProject={"Duta 8 Mengemudi"}
-            descriptionProject={
-              "One of our client website that offers driving lessons. Made using wordpress"
-            }
-            linkUrl={"https://www.duta8mengemudi.com"}
-          />
-        </div>
-      </section>
-      <section
-        className="text-white p-5 lg:p-20 py-12 lg:py-20  grid-cols-1 gap-8 lg:gap-14 md:grid-cols-2 hidden md:grid"
-        ref={projectSectionRef}
-      >
-        <div className="flex flex-col gap-5">
-          <div className="sticky" ref={projectRef}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl xxl:text-8xl font-sen font-bold text-center">
-              MY PROJECTS
-            </h2>
-            <p className="text-base md:text-xl/9 lg:text-2xl/10 xl:text-3xl/[50px] xxl:text-6xl/[80px] text-light_gray text-center">
-              Projects that I'have done so far.
-            </p>
+        <div className="parallaxProject relative flex justify-center items-center">
+          <div
+            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            style={{ backgroundImage: `url(${duta8mengemudi})` }}
+          ></div>
+          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+              Duta 8 Mengemudi
+            </h3>
+            <div className="flex justify-center items-center">
+              <a
+                href="https://duta8mengemudi.com/"
+                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+              >
+                CHECK ME
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="columns-1 space-y-4 md:space-y-8">
-          <ProjectCard
-            pictureUrl={WMDEVELOPER}
-            titleProject={"wmdeveloper"}
-            descriptionProject={
-              "A modern, simple, and seamless design for wmdeveloper. Made using react"
-            }
-            linkUrl={"https://www.wmdeveloper.com"}
-          />
-          <ProjectCard
-            pictureUrl={appleClone}
-            titleProject={"Apple Clone"}
-            descriptionProject={
-              "Cloning apple website to showcase that I am able to utilize gsap animation. Made using react"
-            }
-            linkUrl={"https://www.abrahamnaiborhu.com"}
-          />
-          <ProjectCard
-            pictureUrl={awardWinningClone}
-            titleProject={"awad winning clone"}
-            descriptionProject={
-              "a clone to gaming website which is heavily animated. Made using react"
-            }
-            linkUrl={"https://www.abrahamnaiborhu.com"}
-          />
-          <ProjectCard
-            pictureUrl={kedaiLantaiKayu}
-            titleProject={"kedai lantai kayu"}
-            descriptionProject={
-              "One of our client that sells interior wood flooring and vinly. Made using wordpress"
-            }
-            linkUrl={"https://www.kedailantaikayu.com"}
-          />
-          <ProjectCard
-            pictureUrl={mkstorejastip}
-            titleProject={"MkStore Jastip"}
-            descriptionProject={
-              "One of our client website that offers goods delivery service. Made using wordpress"
-            }
-            linkUrl={"https://www.mkstorejastip.com"}
-          />
-          <ProjectCard
-            pictureUrl={duta8mengemudi}
-            titleProject={"Duta 8 Mengemudi"}
-            descriptionProject={
-              "One of our client website that offers driving lessons. Made using wordpress"
-            }
-            linkUrl={"https://www.duta8mengemudi.com"}
-          />
+        <div className="parallaxProject relative flex justify-center items-center">
+          <div
+            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            style={{ backgroundImage: `url(${kedaiLantaiKayu})` }}
+          ></div>
+          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+              Kedai Lantai Kayu
+            </h3>
+            <div className="flex justify-center items-center">
+              <a
+                href="https://kedailantaikayu.com/"
+                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+              >
+                CHECK ME
+              </a>
+            </div>
+          </div>
         </div>
-      </section>
-    </div>
+
+        <div className="parallaxProject relative flex justify-center items-center">
+          <div
+            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            style={{ backgroundImage: `url(${mkstorejastip})` }}
+          ></div>
+          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+              MK Store
+            </h3>
+            <div className="flex justify-center items-center">
+              <a
+                href="https://mkstorejastip.com/"
+                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+              >
+                CHECK ME
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="parallaxProject relative flex justify-center items-center">
+          <div
+            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            style={{ backgroundImage: `url(${sitonggiElektrikJaya})` }}
+          ></div>
+          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+              Elektrik Jaya
+            </h3>
+            <div className="flex justify-center items-center">
+              <a
+                href="https://abrahamnaiborhu.me/sitonggi_elektrik_jaya/"
+                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+              >
+                CHECK ME
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="parallaxProject relative flex justify-center items-center">
+          <div
+            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            style={{ backgroundImage: `url(${WMDEVELOPER})` }}
+          ></div>
+          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+              WM Developer
+            </h3>
+            <div className="flex justify-center items-center">
+              <a
+                href="https://wmdeveloper.com/"
+                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+              >
+                CHECK ME
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

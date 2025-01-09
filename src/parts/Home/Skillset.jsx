@@ -149,8 +149,8 @@ export default function Skillset() {
           </div>
           <div className=" ">
             <div className="flex flex-row arrowGoToDown">
-              <div className="w-16 lg:w-24 xxl:w-48 bg-white h-2 xxl:h-4 rotate-[50deg]  translate-x-[21%] lg:translate-x-[20%] translate-y-4  lg:translate-y-7 xxl:translate-y-16 "></div>
-              <div className="w-16 lg:w-24 xxl:w-48 bg-white h-2 xxl:h-4 -rotate-[50deg] -translate-x-[21%] lg:-translate-x-[20%] translate-y-4 lg:translate-y-7 xxl:translate-y-16 "></div>
+              <div className="w-16 lg:w-24 xxl:w-48 bg-white h-1 md:h-2 xxl:h-4 rotate-[50deg] translate-x-[20%]  md:translate-x-[21%] lg:translate-x-[20%] translate-y-4  lg:translate-y-7 xxl:translate-y-16 "></div>
+              <div className="w-16 lg:w-24 xxl:w-48 bg-white h-1 md:h-2 xxl:h-4 -rotate-[50deg] -translate-x-[20%] md:-translate-x-[21%] lg:-translate-x-[20%] translate-y-4 lg:translate-y-7 xxl:translate-y-16 "></div>
             </div>
           </div>
         </div>

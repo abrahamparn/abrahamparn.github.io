@@ -1,9 +1,42 @@
 import React, { useState, useEffect, useRef } from "react";
 import NavItem from "./NavItem";
-export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHover }) {
+import { useWindowScroll } from "react-use";
+import gsap from "gsap";
+
+export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHover, navActive }) {
+  const { y: currentScrollY } = useWindowScroll();
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+
+  useEffect(() => {
+    if (currentScrollY === 0) {
+      // Topmost position: show navbar without floating-nav
+      setIsNavVisible(true);
+      headerRef.current.classList.remove("floating-nav");
+    } else if (currentScrollY > lastScrollY) {
+      // Scrolling down: hide navbar and apply floating-nav
+      setIsNavVisible(false);
+      headerRef.current.classList.add("floating-nav");
+    } else if (currentScrollY < lastScrollY) {
+      // Scrolling up: show navbar with floating-nav
+      setIsNavVisible(true);
+      headerRef.current.classList.add("floating-nav");
+    }
+
+    setLastScrollY(currentScrollY);
+  }, [currentScrollY, lastScrollY]);
+
+  useEffect(() => {
+    gsap.to(headerRef.current, {
+      y: isNavVisible ? 0 : -100,
+      opacity: isNavVisible ? 1 : 0,
+      duration: 0.2,
+    });
+  }, [isNavVisible && !navActive]);
+
   return (
     <header className="fixed w-full z-10" ref={headerRef}>
-      <nav className="w-full flex flex-row justify-between px-10 py-5 text-white_tertiary">
+      <nav className="w-full flex flex-row justify-between px-10 py-5 text-white_tertiary ">
         <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl">Abraham_pn</p>
         <button className="text-3xl" onClick={handleMenuOnClick}>
           ☰
@@ -54,26 +87,25 @@ export default function Navbar({ headerRef, handleMenuOnClick, handleNavItemHove
               onHover={handleNavItemHover}
               handleMenuOnClick={handleMenuOnClick}
             /> */}
-
-            <NavItem
-              text="EXPERIENCE"
-              href="#workExperience"
-              onHover={handleNavItemHover}
-              handleMenuOnClick={handleMenuOnClick}
-            />
             <NavItem
               text="SKILLS"
               href="#skills"
               onHover={handleNavItemHover}
               handleMenuOnClick={handleMenuOnClick}
             />
-            {/*
+            <NavItem
+              text="EXPERIENCE"
+              href="#workExperience"
+              onHover={handleNavItemHover}
+              handleMenuOnClick={handleMenuOnClick}
+            />
+
             <NavItem
               text="PROJECT"
               href="#project"
               onHover={handleNavItemHover}
               handleMenuOnClick={handleMenuOnClick}
-            /> */}
+            />
             <NavItem
               text="CONTACT"
               href="#contact"

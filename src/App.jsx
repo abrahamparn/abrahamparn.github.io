@@ -16,6 +16,7 @@ import Hero from "./parts/Home/Hero";
 import WorkExperience from "./parts/Home/WorkExperience";
 import Contact from "./components/Contact";
 import Skillset from "./parts/Home/Skillset";
+import Project from "./parts/Home/Project";
 
 function App() {
   //MAIN CONTEXT
@@ -149,10 +150,12 @@ function App() {
         headerRef={headerRef}
         handleMenuOnClick={handleMenuOnClick}
         handleNavItemHover={handleNavItemHover}
+        navActive={navActive}
       />
 
       <Hero handleButtonHover={handleButtonHover} />
       <Skillset />
+      <Project />
       <WorkExperience />
       <Contact />
     </main>
