@@ -50,7 +50,7 @@ export default function Project() {
   return (
     <section
       id="project"
-      className="h-full min-h-[100dvh] px-10 bg-black text-white"
+      className="h-full min-h-[100dvh] px-5 md:px-10 bg-black text-white"
       ref={projectSectionRef}
     >
       {/* Intro Text */}
@@ -64,20 +64,20 @@ export default function Project() {
       </div>
 
       {/* Grid of parallax sections */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-10 pt-16">
+      <div className="grid grid-cols-2 gap-5 space-y-3 md:gap-10 pt-10 md:pt-16">
         <div className="parallaxProject relative flex justify-center items-center">
           <div
-            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
             style={{ backgroundImage: `url(${awardWinningClone})` }}
           ></div>
-          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
-            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+          <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
               Award Copy
             </h3>
             <div className="flex justify-center items-center">
               <a
                 href="https://abrahamnaiborhu.me/awards"
-                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+                className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
               </a>
@@ -87,17 +87,17 @@ export default function Project() {
 
         <div className="parallaxProject relative flex justify-center items-center">
           <div
-            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
             style={{ backgroundImage: `url(${duta8mengemudi})` }}
           ></div>
-          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
-            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+          <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
               Duta 8 Mengemudi
             </h3>
             <div className="flex justify-center items-center">
               <a
                 href="https://duta8mengemudi.com/"
-                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+                className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
               </a>
@@ -107,17 +107,17 @@ export default function Project() {
 
         <div className="parallaxProject relative flex justify-center items-center">
           <div
-            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
             style={{ backgroundImage: `url(${kedaiLantaiKayu})` }}
           ></div>
-          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
-            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+          <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
               Kedai Lantai Kayu
             </h3>
             <div className="flex justify-center items-center">
               <a
                 href="https://kedailantaikayu.com/"
-                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+                className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
               </a>
@@ -127,17 +127,17 @@ export default function Project() {
 
         <div className="parallaxProject relative flex justify-center items-center">
           <div
-            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
             style={{ backgroundImage: `url(${mkstorejastip})` }}
           ></div>
-          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
-            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+          <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
               MK Store
             </h3>
             <div className="flex justify-center items-center">
               <a
                 href="https://mkstorejastip.com/"
-                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+                className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
               </a>
@@ -147,17 +147,17 @@ export default function Project() {
 
         <div className="parallaxProject relative flex justify-center items-center">
           <div
-            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
             style={{ backgroundImage: `url(${sitonggiElektrikJaya})` }}
           ></div>
-          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
-            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+          <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
               Elektrik Jaya
             </h3>
             <div className="flex justify-center items-center">
               <a
                 href="https://abrahamnaiborhu.me/sitonggi_elektrik_jaya/"
-                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+                className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
               </a>
@@ -167,17 +167,17 @@ export default function Project() {
 
         <div className="parallaxProject relative flex justify-center items-center">
           <div
-            className="parallax-bg h-[40vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-8 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
             style={{ backgroundImage: `url(${WMDEVELOPER})` }}
           ></div>
-          <div className="absolute flex flex-col gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
-            <h3 className=" text-white font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl">
+          <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
               WM Developer
             </h3>
             <div className="flex justify-center items-center">
               <a
                 href="https://wmdeveloper.com/"
-                className="block w-32 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-lg md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+                className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
               </a>
