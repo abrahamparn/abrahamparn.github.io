@@ -10,6 +10,7 @@ import mkstorejastip from "../../assets/projects/mkstorejastip.png";
 import appleClone from "../../assets/projects/appleClone.png";
 import WMDEVELOPER from "../../assets/projects/WMDEVELOPER.png";
 import sitonggiElektrikJaya from "../../assets/projects/sitonggiElektrikJaya.png";
+import monpizza from "../../assets/projects/monpizza.png";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Project() {
@@ -88,15 +89,15 @@ export default function Project() {
         <div className="parallaxProject relative flex justify-center items-center">
           <div
             className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
-            style={{ backgroundImage: `url(${duta8mengemudi})` }}
+            style={{ backgroundImage: `url(${monpizza})` }}
           ></div>
           <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
             <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
-              Duta 8 Mengemudi
+              Mon Pizza
             </h3>
             <div className="flex justify-center items-center">
               <a
-                href="https://duta8mengemudi.com/"
+                href="https://abrahamnaiborhu.me/monpizza"
                 className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
@@ -108,15 +109,15 @@ export default function Project() {
         <div className="parallaxProject relative flex justify-center items-center">
           <div
             className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
-            style={{ backgroundImage: `url(${kedaiLantaiKayu})` }}
+            style={{ backgroundImage: `url(${duta8mengemudi})` }}
           ></div>
           <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
             <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
-              Kedai Lantai Kayu
+              Duta 8 Mengemudi
             </h3>
             <div className="flex justify-center items-center">
               <a
-                href="https://kedailantaikayu.com/"
+                href="https://duta8mengemudi.com/"
                 className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
@@ -177,6 +178,26 @@ export default function Project() {
             <div className="flex justify-center items-center">
               <a
                 href="https://wmdeveloper.com/"
+                className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
+              >
+                CHECK ME
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="parallaxProject relative flex justify-center items-center">
+          <div
+            className="parallax-bg h-[20vh] md:h-[30vh] lg:h-[45vh] xl:h-[60vh] w-full  opacity-30 border-gray-600 border-4 md:border-[10px] lg:border-[12px]  xxl:border-[22px] bg-cover bg-center rounded-lg xxl:rounded-2xl"
+            style={{ backgroundImage: `url(${kedaiLantaiKayu})` }}
+          ></div>
+          <div className="absolute flex flex-col gap-2 md:gap-4 lg:gap-8 xl:gap-9 xxl:gap-12">
+            <h3 className=" text-white font-bold text-base md:text-3xl lg:text-4xl xl:text-5xl xxl:text-7xl text-center">
+              Kedai Lantai Kayu
+            </h3>
+            <div className="flex justify-center items-center">
+              <a
+                href="https://kedailantaikayu.com/"
                 className="block w-20 md:w-[10rem] lg:w-[12rem] xl:w-[16rem] xxl:w-[24rem] text-center self-center bg-white text-black_main text-sm md:text-xl lg:text-2xl xl:text-3xl xxl:text-5xl font-semibold  rounded-lg md:rounded-xl xl:rounded-2xl py-1 xl:py-4 xxl:py-8"
               >
                 CHECK ME
